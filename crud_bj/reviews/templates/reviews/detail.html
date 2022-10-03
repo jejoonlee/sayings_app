@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<h1>제목: {{ review.title }}</h1>
+<p>{{ review.content }}</p>
+
+<a href="{% url 'reviews:edit' review.pk %}">리뷰 수정</a>
+<a href="{% url 'reviews:delete' review.pk %}">리뷰 삭제</a>
+  
+{% endblock content %}
+  
