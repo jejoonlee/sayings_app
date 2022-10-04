@@ -7,15 +7,10 @@
 
 {% block content %}
 <h1 class="text-center">Create 페이지 예시</h1>
-<form class="container" action="{% url 'practice:created' %}">
-  <div class="title d-flex mb-3">
-    <label for="title">명언 제목</label>
-    <input type="text" id="title" name="title" value="{{ saying.title }}" required>
-  </div>
-  <div class="content d-flex mb-3">
-    <label for="content">명언 내용</label>
-    <textarea name="content" id="content" cols="30" rows="2" required>{{ saying.content }}</textarea>
-  </div>
+<form class="container" action="" method="POST">
+  {% csrf_token %}  
+  {{ saying_form.as_p }}
+
   <div class="image d-flex mb-3">
     <p>이미지 파일</p>
   </div>
